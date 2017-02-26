@@ -257,21 +257,48 @@ class Dispatcher
             'porad_cis' => $receipt->porad_cis,
             'dat_trzby' => $receipt->dat_trzby->format('c'),
             'celk_trzba' => Format::price($receipt->celk_trzba),
-            'zakl_nepodl_dph' => Format::price($receipt->zakl_nepodl_dph),
-            'zakl_dan1' => Format::price($receipt->zakl_dan1),
-            'dan1' => Format::price($receipt->dan1),
-            'zakl_dan2' => Format::price($receipt->zakl_dan2),
-            'dan2' => Format::price($receipt->dan2),
-            'zakl_dan3' => Format::price($receipt->zakl_dan3),
-            'dan3' => Format::price($receipt->dan3),
-            'cest_sluz' => Format::price($receipt->cest_sluz),
-            'pouzit_zboz1' => Format::price($receipt->pouzit_zboz1),
-            'pouzit_zboz2' => Format::price($receipt->pouzit_zboz2),
-            'pouzit_zboz3' => Format::price($receipt->pouzit_zboz3),
-            'urceno_cerp_zuct' => Format::price($receipt->urceno_cerp_zuct),
-            'cerp_zuct' => Format::price($receipt->cerp_zuct),
             'rezim' => $receipt->rezim
         ];
+
+        if ($receipt->zakl_nepodl_dph !== null) {
+            $body['zakl_nepodl_dph'] = Format::price($receipt->zakl_nepodl_dph);
+        }
+        if ($receipt->zakl_dan1 !== null) {
+            $body['zakl_dan1'] = Format::price($receipt->zakl_dan1);
+        }
+        if ($receipt->dan1 !== null) {
+            $body['dan1'] = Format::price($receipt->dan1);
+        }
+        if ($receipt->zakl_dan2 !== null) {
+            $body['zakl_dan2'] = Format::price($receipt->zakl_dan2);
+        }
+        if ($receipt->dan2 !== null) {
+            $body['dan2'] = Format::price($receipt->dan2);
+        }
+        if ($receipt->zakl_dan3 !== null) {
+            $body['zakl_dan3'] = Format::price($receipt->zakl_dan3);
+        }
+        if ($receipt->dan3 !== null) {
+            $body['dan3'] = Format::price($receipt->dan3);
+        }
+        if ($receipt->cest_sluz !== null) {
+            $body['cest_sluz'] = Format::price($receipt->cest_sluz);
+        }
+        if ($receipt->pouzit_zboz1 !== null) {
+            $body['pouzit_zboz1'] = Format::price($receipt->pouzit_zboz1);
+        }
+        if ($receipt->pouzit_zboz2 !== null) {
+            $body['pouzit_zboz2'] = Format::price($receipt->pouzit_zboz2);
+        }
+        if ($receipt->pouzit_zboz3 !== null) {
+            $body['pouzit_zboz3'] = Format::price($receipt->pouzit_zboz3);
+        }
+        if ($receipt->urceno_cerp_zuct !== null) {
+            $body['urceno_cerp_zuct'] = Format::price($receipt->urceno_cerp_zuct);
+        }
+        if ($receipt->cerp_zuct !== null) {
+            $body['cerp_zuct'] = Format::price($receipt->cerp_zuct);
+        }
 
         $this->lastReceipt = $receipt;
 
